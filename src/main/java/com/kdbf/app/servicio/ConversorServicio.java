@@ -3,6 +3,8 @@ package com.kdbf.app.servicio;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.util.List;
+import java.util.Set;
 
 import com.google.gson.Gson;
 import com.kdbf.app.config.ApiConfig;
@@ -57,6 +59,13 @@ public class ConversorServicio {
   public static double convertirCantidad(double cantidadDinero, Moneda monedaBase, String monedaObjetivo) {
     Double tasaDeCambio = monedaBase.getTasas().get(monedaObjetivo);
     return cantidadDinero * tasaDeCambio;
+  }
+
+  public static List<String> mostrarTodasMonedas(Moneda moneda) {
+    return moneda.getTasas().keySet()
+        .stream()
+        .sorted()
+        .toList();
   }
 
 }
