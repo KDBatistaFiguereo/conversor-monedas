@@ -48,4 +48,15 @@ public class ConversorServicio {
 
   }
 
+  /**
+   * @param cantidadDinero La cantidad a convertir
+   * @param monedaBase     Especifica en que moneda esta la cantidad a convertir
+   * @param monedaObjetivo Es a la moneda a la que se convertira la cantidad
+   * @return devuelve la cantidad de dinero equivalente en monedaObjetivo
+   */
+  public static double convertirCantidad(double cantidadDinero, Moneda monedaBase, String monedaObjetivo) {
+    Double tasaDeCambio = monedaBase.getTasas().get(monedaObjetivo);
+    return cantidadDinero * tasaDeCambio;
+  }
+
 }
