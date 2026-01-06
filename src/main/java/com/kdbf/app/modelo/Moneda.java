@@ -14,4 +14,16 @@ public class Moneda {
     this.tasas = tasas;
   }
 
+  public String getCodigoMoneda() {
+    return codigoMoneda;
+  }
+
+  public Map<String, Double> getTasas() {
+    return tasas;
+  }
+
+  public void setTasas(Map<String, Double> tasas) {
+    this.tasas = tasas;
+  }
+
 }
